@@ -13,26 +13,54 @@
             margin-top : 48px;
         }
 
+        
+
         nav {
-          background-color: black; 
           padding: 2px 0; 
           height: 53px;
         }
 
         nav a {
-          color: white !important; 
+          color: black !important; 
+          font-weight: bolder;
           margin-right: 15px; 
           transition: color 0.3s;
           padding: 8px 10px; 
           text-decoration: none;
         }
-
-        nav li a:hover,
-        nav a.active {
-           color: white !important; 
-           background-color: 	#1E90FF	;
+        .nav-item{
+          font-size: 18px;
         }
-        
+
+        @media (max-width: 768px) {
+          .navbar-nav {
+            background-color: black;
+            width: 100%;
+            
+            
+          }
+      
+          .navbar-nav .nav-item .nav-link {
+            color: white !important;
+            margin-left: 20px;
+          }
+
+        }
+
+        @media (max-width: 991px) {
+          .navbar-nav {
+            background-color: black;
+            width: 100%;
+           
+          }
+      
+          .navbar-nav .nav-item .nav-link {
+            color: white !important;
+            margin-left: 20px; 
+          }
+        }
+
+       
     </style>
 </head>
 
@@ -41,9 +69,9 @@
 <form method="post" action="{% url 'home' %}">{% csrf_token%}
 </form>
 {% comment %} #NAVBAR  {% endcomment %}
-    <nav class="navbar navbar-expand-lg bg-dark position-sticky top-0 z-3">
-        <div class="container-fluid">
-          <a class="navbar-brand text-white" href="#"><b>BLOG BIZZ</b></a>
+    <nav class="navbar navbar-expand-lg bg-warning  position-sticky top-0 z-3">
+        {% comment %} <div class="container-fluid"> {% endcomment %}
+          <a class="navbar-brand text-black" href="#"><b>BLOG BIZZ</b></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -68,7 +96,7 @@
               <button class="btn btn-outline-secondary" type="submit">Search</button>
             </form>
           </div>
-        </div>
+        {% comment %} </div> {% endcomment %}
       </nav>
 
 {% comment %} TO DISPLAY ERROR OR SUCCESS MESSAGE {% endcomment %}
